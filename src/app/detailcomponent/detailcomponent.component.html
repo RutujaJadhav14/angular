@@ -1,0 +1,89 @@
+<div class="row">
+  <h2>{{ newdata3 }}({{ id }})</h2>
+
+  <div *ngIf="newdata2; else down3">
+    <div class="column">
+      <h3>{{ months[datazeromonth - 1] }}</h3>
+
+      <p>Change: {{ datazerochange }}</p>
+
+      <p>MSPR: {{ datazeromspr }}</p>
+    </div>
+    <div class="column">
+      <div *ngIf="datazerochange >= 0; else down">
+        <img
+          src="\assets\arrows\green.jpeg"
+          style="width: 40px; height: 80px"
+        />
+      </div>
+
+      <ng-template #down>
+        <img src="\assets\arrows\red.jpeg" style="width: 40px; height: 80px" />
+      </ng-template>
+    </div>
+  </div>
+  <ng-template #down3>
+    <div class="column">
+      <h3>{{ mo11 }}</h3>
+      <p>Data Unavailable</p>
+    </div>
+  </ng-template>
+
+  <div *ngIf="newdata2; else down2">
+    <div class="column">
+      <h3>{{ months[dataonemonth - 1] }}</h3>
+      <p>Change: {{ dataonechange }}</p>
+
+      <p>MSPR: {{ dataonemspr }}</p>
+    </div>
+    <div class="column">
+      <div *ngIf="dataonechange >= 0; else down">
+        <img
+          src="\assets\arrows\green.jpeg"
+          style="width: 40px; height: 80px"
+        />
+      </div>
+
+      <ng-template #down>
+        <img src="\assets\arrows\red.jpeg" style="width: 40px; height: 80px" />
+      </ng-template>
+    </div>
+  </div>
+  <ng-template #down2>
+    <div class="column">
+      <h3>{{ mo22 }}</h3>
+      <p>Data Unavailable</p>
+    </div>
+  </ng-template>
+
+  <div *ngIf="newdata2; else down1">
+    <div class="column">
+      <h3>{{ months[datatwomonth - 1] }}</h3>
+      <p>Change: {{ datatwochange }}</p>
+
+      <p>MSPR: {{ datatwomspr }}</p>
+    </div>
+    <div class="column">
+      <div *ngIf="datatwochange >= 0; else down">
+        <img
+          src="\assets\arrows\green.jpeg"
+          style="width: 40px; height: 80px"
+        />
+      </div>
+      <ng-template #down>
+        <img src="\assets\arrows\red.jpeg" style="width: 40px; height: 80px" />
+      </ng-template>
+    </div>
+  </div>
+
+  <ng-template #down1>
+    <div class="column">
+      <h3>{{ mo33 }}</h3>
+      <p>Data Unavailable</p>
+    </div>
+  </ng-template>
+</div>
+<br />
+<button id=" backBtn">
+  <a routerLink="" routerLinkActive="active"> Back to list of stocks </a>
+</button>

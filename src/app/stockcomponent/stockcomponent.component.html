@@ -1,0 +1,39 @@
+<!-- <div *ngIf="Operation == true"> -->
+<div class="middle">
+  <div class="row">
+    <div class="column">
+      <h2>{{ Sdescription }} ({{ symbol1 }})</h2>
+      <p>
+        Change Today:{{ newdata?.d }} <br />Opening Price:${{ newdata?.o
+        }}<br />
+        Current Price:${{ newdata?.c }}<br />
+        High Price:${{ newdata?.h }}<br />
+        <button>
+          <a routerLink="/detail/{{ symbol1 }}" routerLinkActive="active">
+            Go to social sentiment details
+          </a>
+        </button>
+      </p>
+    </div>
+
+    <div class="column" *ngIf="Schange != undefined">
+      <div *ngIf="Schange >= 0; else down">
+        <h1><fa-icon [icon]="icon1"></fa-icon></h1>
+      </div>
+
+      <ng-template #down>
+        <h1><fa-icon [icon]="icon2"></fa-icon></h1>
+      </ng-template>
+    </div>
+    <div class="column">
+      <button
+        style="position: left"
+        type="button"
+        (click)="removeSymbol(this.symbol1)"
+      >
+        X
+      </button>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
